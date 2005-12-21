@@ -1,12 +1,12 @@
 Summary:	Program to print the status of an LSI 1030 RAID controller
 Summary(pl):	Program podaj±cy stan kontrolera LSI 1030 RAID
 Name:		mpt-status
-Version:	1.0
+Version:	1.1.4
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
-Source0:	http://www.red-bean.com/~mab/%{name}-%{version}.tar.gz
-# Source0-md5:	ab4d6ee64fe15ad34aa7a4aca22e5420
+Source0:	http://www.drugphish.ch/~ratz/mpt-status/%{name}-%{version}.tar.bz2
+# Source0-md5:	c335e8671af520c77d2dac309920e4e1
 # needed headers taken from kernel 2.4.31 source
 Patch0:		%{name}-headers.patch
 URL:		http://www.red-bean.com/~mab/mpt-status.html
@@ -27,7 +27,8 @@ Program podaj±cy stan kontrolera LSI 1030 RAID.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -Wall -Iinclude"
+	CFLAGS="%{rpmcflags} -Wall -W -Iincl -Iinclude" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
