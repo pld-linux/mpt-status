@@ -1,5 +1,5 @@
 Summary:	Program to print the status of an LSI 1030 RAID controller
-Summary(pl):	Program podaj±cy stan kontrolera LSI 1030 RAID
+Summary(pl.UTF-8):   Program podajÄ…cy stan kontrolera LSI 1030 RAID
 Name:		mpt-status
 Version:	1.2.0
 Release:	1
@@ -17,8 +17,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Program to print the status of an LSI 1030 RAID controller.
 
-%description -l pl
-Program podaj±cy stan kontrolera LSI 1030 RAID.
+%description -l pl.UTF-8
+Program podajÄ…cy stan kontrolera LSI 1030 RAID.
 
 %prep
 %setup -q
