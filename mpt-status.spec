@@ -9,6 +9,7 @@ Source0:	http://www.drugphish.ch/~ratz/mpt-status/%{name}-%{version}.tar.bz2
 # Source0-md5:	fae044db1340fd37aa81b4ecef7bbd46
 # needed headers taken from kernel 2.6.16.29 source
 Patch0:		%{name}-headers.patch
+Patch1:		%{name}-no_compiler.h.patch
 URL:		http://www.red-bean.com/~mab/mpt-status.html
 BuildRequires:	pciutils-devel
 Requires:	dev >= 2.9.0-20
@@ -23,6 +24,7 @@ Program podający stan kontrolera LSI 1030 RAID.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \
