@@ -1,6 +1,6 @@
 diff -ur orig/mpt-status.c mod/mpt-status.c
 --- orig/mpt-status.c	2006-11-01 09:13:35.000000000 +0000
-+++ mod/mpt-status.c	2008-03-22 20:31:56.546110535 +0000
++++ mod/mpt-status.c	2008-03-22 21:58:45.749101474 +0000
 @@ -38,6 +38,7 @@
  #include "mpt-status.h"
  
@@ -50,7 +50,7 @@ diff -ur orig/mpt-status.c mod/mpt-status.c
  
  static void __check_endianess(void) {
  	int i = 1;
-@@ -770,6 +777,138 @@
+@@ -770,6 +777,140 @@
  	return;
  }
  
@@ -144,9 +144,11 @@ diff -ur orig/mpt-status.c mod/mpt-status.c
 +		time[2] = time[3]-(3600*time[0])-(60*time[1]);						// s
 +		
 +		// set progress bar...
-+		for(i = 1; i < percent/2; i++)
-+			progress[i] = '=';
-+			progress[i-1] = '>';
++		for(i = 1; i < percent/2; i++) 
++		    progress[i] = '=';
++			
++		if(i==1) progress[i] = '>';
++		else progress[--i] = '>';
 +		
 +		// if in quite_mode: only print resync status
 +		if(quiet_mode>0) {
@@ -189,7 +191,7 @@ diff -ur orig/mpt-status.c mod/mpt-status.c
  static void __print_volume_advanced(RaidVolumePage0_t *page) {
  	if (1 == print_status_only) {
  		mpt_printf("vol_id:%d", page->VolumeID);
-@@ -1164,9 +1303,9 @@
+@@ -1164,9 +1305,9 @@
  			mpt_exit(MPT_EXIT_OKAY);
  			break;
  		case  0:
@@ -202,7 +204,7 @@ diff -ur orig/mpt-status.c mod/mpt-status.c
  			break;
  		case -1:
  			// Done with options
-@@ -1192,7 +1331,6 @@
+@@ -1192,7 +1333,6 @@
  			mpt_exit(MPT_EXIT_UNKNOWN);
  		}
  		*/
@@ -210,7 +212,7 @@ diff -ur orig/mpt-status.c mod/mpt-status.c
  	} else {
  		/* this is the old style setup */
  		if (probe_id > 0) {
-@@ -1208,7 +1346,10 @@
+@@ -1208,7 +1348,10 @@
  				mpt_exit(MPT_EXIT_OKAY);
  			}
  		}
