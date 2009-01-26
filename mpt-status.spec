@@ -1,5 +1,5 @@
-Summary:	Program to print the status of an LSI 1030 RAID controller
-Summary(pl.UTF-8):	Program podający stan kontrolera LSI 1030 RAID
+Summary:	Program to print the status of an LSI RAID controllers
+Summary(pl.UTF-8):	Program podający stan kontrolerów LSI RAID
 Name:		mpt-status
 Version:	1.2.0
 Release:	2
@@ -17,10 +17,20 @@ Requires:	dev >= 2.9.0-20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Program to print the status of an LSI 1030 RAID controller.
+The mpt-status software is a query tool to access the running configuration and
+status of LSI SCSI HBAs. This is a completely rewritten version of the original
+mpt-status-1.0 tool written by Matt Braithwaite. mpt-status allows you to
+monitor the health and status of your RAID setup. 
 
-%description -l pl.UTF-8
-Program podający stan kontrolera LSI 1030 RAID.
+Currently supported and tested HBAs are:
+LSI 1030 SCSI RAID storage controller
+LSI SAS1064 SCSI RAID storage controller
+LSI SAS1068 SCSI RAID storage controller
+LSI SAS 3442-R SCSI RAID storage controller
+
+Since the tool is using the MPI (message passing interface) changes are high
+that the basic information regarding RAID status will be available for all
+LSI based controllers. Just give it a try and report back.
 
 %prep
 %setup -q
