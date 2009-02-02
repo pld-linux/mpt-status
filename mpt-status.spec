@@ -17,20 +17,40 @@ Requires:	dev >= 2.9.0-20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The mpt-status software is a query tool to access the running configuration and
-status of LSI SCSI HBAs. This is a completely rewritten version of the original
-mpt-status-1.0 tool written by Matt Braithwaite. mpt-status allows you to
-monitor the health and status of your RAID setup. 
+The mpt-status software is a query tool to access the running
+configuration and status of LSI SCSI HBAs. This is a completely
+rewritten version of the original mpt-status-1.0 tool written by Matt
+Braithwaite. mpt-status allows you to monitor the health and status of
+your RAID setup. 
 
 Currently supported and tested HBAs are:
-LSI 1030 SCSI RAID storage controller
-LSI SAS1064 SCSI RAID storage controller
-LSI SAS1068 SCSI RAID storage controller
-LSI SAS 3442-R SCSI RAID storage controller
+- LSI 1030 SCSI RAID storage controller
+- LSI SAS1064 SCSI RAID storage controller
+- LSI SAS1068 SCSI RAID storage controller
+- LSI SAS 3442-R SCSI RAID storage controller
 
-Since the tool is using the MPI (message passing interface) changes are high
-that the basic information regarding RAID status will be available for all
-LSI based controllers. Just give it a try and report back.
+Since the tool is using the MPI (message passing interface) chances
+are high that the basic information regarding RAID status will be
+available for all LSI based controllers. Just give it a try and report
+back.
+
+%description -l pl.UTF-8
+Program mpt-status to narzędzie pozwalające na dostęp do konfiguracji
+i stanu działających kontrolerów (HBA) SCSI firmy LSI. Jest to
+napisana całkowicie od nowa wersja oryginalnego narzędzia
+mpt-status-1.0 autorstwa Matta Braithwaite. mpt-status pozwala
+monitorować stan macierzy RAID.
+
+Aktualnie obsługiwane i przetestowane kontrolery to:
+- LSI 1030 SCSI RAID storage controller
+- LSI SAS1064 SCSI RAID storage controller
+- LSI SAS1068 SCSI RAID storage controller
+- LSI SAS 3442-R SCSI RAID storage controller
+
+Ponieważ narzędzie używa interfejsu MPI (Message Passing Interface),
+są duże szanse, że podstawowe informacje o stanie macierzy będą
+dostępne dla wszystkich kontrolerów opartych na LSI. Zalecane jest
+sprawdzenie i zgłoszenie informacji do autorów.
 
 %prep
 %setup -q
