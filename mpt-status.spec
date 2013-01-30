@@ -1,3 +1,7 @@
+# TODO
+# - sync info patch gives "Floating point exception" time to time:D
+#   # mpt-status --sync_info
+#   Floating point exception
 Summary:	Program to print the status of an LSI RAID controllers
 Summary(pl.UTF-8):	Program podający stan kontrolerów LSI RAID
 Name:		mpt-status
@@ -21,7 +25,7 @@ The mpt-status software is a query tool to access the running
 configuration and status of LSI SCSI HBAs. This is a completely
 rewritten version of the original mpt-status-1.0 tool written by Matt
 Braithwaite. mpt-status allows you to monitor the health and status of
-your RAID setup. 
+your RAID setup.
 
 Currently supported and tested HBAs are:
 - LSI 1030 SCSI RAID storage controller
