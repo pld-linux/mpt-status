@@ -6,7 +6,7 @@ Summary:	Program to print the status of an LSI RAID controllers
 Summary(pl.UTF-8):	Program podający stan kontrolerów LSI RAID
 Name:		mpt-status
 Version:	1.2.0
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://www.drugphish.ch/~ratz/mpt-status/%{name}-%{version}.tar.bz2
